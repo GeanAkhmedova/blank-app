@@ -62,9 +62,7 @@ sort_order = st.radio(
 
 if st.button("Show search results", type="primary"):
     st.write("Nothing here yet :(") 
-    with st.sidebar:
-        with st.echo():
-            st.write("This code will be printed to the sidebar.")
+    if word_min == None:
+        st.write("poop")
 
-        st.write("pppp")
 
