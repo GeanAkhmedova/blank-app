@@ -77,35 +77,30 @@ if st.button("Show search results", type="primary"):
     Set = []
     for i in range(r):
         for word in u_good_tags:
-             if contains_substring_ignore_case(res.loc[i,'Tags'], word):
+             if contains_substring_ignore_case(res.loc[i,7], word):
               Set.append(i)
-    res1 = res.iloc[Set]
 
-    r = res1.shape[0]
-    Set = []
-    for i in range(r):
+    Set2 = []
+    for i in Set:
         for word in u_bad_tags:
-            if contains_substring_ignore_case(res1.loc[i,'Tags'], word) == False:
-              Set.append(i)
-    res1 = res1.iloc[Set]
-    l = res1.shape[0]
-    st.write(res1.shape)
+            if contains_substring_ignore_case(res.loc[i,], word) == False:
+              Set2.append(i)
     st.text(u_good_tags)
     #res = df
-    for i in range(min(8,l)):
+    for i in Set2:
         #st.write(i)
-        st.subheader(res1.loc[i,'Title'])
+        st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
         with left:
-            #st.write("Rating: ", res1.loc[i,"Rating"])
-            st.write("Author: ",res1.loc[i, "Author"])
-            st.write("Fandom:", res1.loc[i, "Fandom"])
-            st.write("Words: ", res1.loc[i, "Word Count"])
+            #st.write("Rating: ", res.loc[i,"Rating"])
+            st.write("Author: ",res.loc[i, "Author"])
+            st.write("Fandom:", res.loc[i, "Fandom"])
+            st.write("Words: ", res.loc[i, "Word Count"])
             st.write("Relationships: ", res.loc[i, "Relationships"])    
         #left.markdown("hubba hubba")
-        middle.markdown(res1.loc[i,"Tags"])
-        right.markdown(res1.loc[i, "Link"])
-        st.write("Summarry: ", res1.loc[i,"Summary"])
+        middle.markdown(res.loc[i,"Tags"])
+        right.markdown(res.loc[i, "Link"])
+        st.write("Summarry: ", res.loc[i,"Summary"])
         
 
 
