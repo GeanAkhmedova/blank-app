@@ -16,9 +16,9 @@ with col1:
     selection = st.pills("Rating", options, selection_mode="multi")
     st.markdown(f"Your selected options: {selection}.")
 with col2: 
-    eeee
+    "eeee"
 with col3: 
-    33333
+    "33333"
 
 @st.cache_data
 def load_data():
