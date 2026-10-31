@@ -14,8 +14,8 @@ clients = st.multiselect(
 
 st.write("You selected:", clients)
 
-options = ["North", "East", "South", "West"]
-selection = st.pills("Directions", options, selection_mode="multi")
+options = ["Gen", "Teen", "Mature", "Explicit", "Unrated"]
+selection = st.pills("Rating", options, selection_mode="multi")
 st.markdown(f"Your selected options: {selection}.")
 
 col1, col2, col3, col4 = st.columns(4)
