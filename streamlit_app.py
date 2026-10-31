@@ -8,28 +8,11 @@ def load_data():
     return df
 df = load_data()
 r = df.shape[0]
-full_tags = []
-fandom_list = []
-for i in range(r):
-    unsep1 = df.loc[i,"Tags"]
-    unsep2 = df.loc[i,"Fandom"]
-    fic_tags = unsep1.split(', ')
-    l1 = len(fic_tags)
-    fic_fandoms = unsep2.split(', ')
-    l2 = len(fic_fandoms)
-    for j in range(l1):
-        tag = fic_tags[j]
-        if tag not in full_tags:
-            full_tags.append(tag)
-    for j in range(l2):
-        tag = fic_fandoms[j]
-        if tag not in fandom_list:
-            fandom_list.append(tag)
 
 
 st.write("Well, hello there!")
 
-#fandom_list = ["F1", "F2", "F3"]
+#fandom_list = ['C', 'B', 'A', 'Twilight Series - Stephenie Meyer', 'A Knight of the Seven Kingdoms (TV)', 'Adventure Time']
 u_fandoms = st.multiselect(
     "Pick you fandoms!",
     fandom_list,
@@ -50,7 +33,7 @@ with col2:
     "Words max:", value=0
 )
 
-#full_tags = ["T1", "T2", "T3", "T4"]
+full_tags =['Romance', 'First Time', 'English Season/Series 01', 'Truth Spells', '2Good2BTrue', 'Magic Revealed', 'Canon-Typical Violence', 'canon-typical behaviour', 'canon events', 'Blood\r\nand Injury', 'Drama & Romance', 'Canon Divergence - Ashford Tourney,\r\nEnemies to Lovers', 'Falling In Love', 'Angst with a Happy Ending,\r\nComplicated Relationships', 'unhealthy relationship dynamics', 'Obsession,\r\nFirst Kiss', 'Dragon Dreamers & Dragon Dreams (A Song of Ice and Fire),\r\nExplicit Sexual Content', 'Sexual Tension', 'Hand Jobs', 'Size Difference,\r\nBlow Jobs', 'Top Dunk | Duncan the Tall (A Song of Ice and Fire)', 'Bottom\r\nAerion Targaryen (Son of Maekar I)', 'Inexperienced Duncan the Tall,\r\nBlood Kink', 'Scar Kink', 'Jealousy', 'Slow Burn', 'Height difference,\r\n\r\nHurt/Comfort', 'Political Intrigue', 'Internal Conflict', 'Mutual Pining', 'Self-\r\nWorth Issues', 'Emotional Manipulation', 'Class Difference', 'Morally\r\n\r\nAmbiguous Character', 'Wet Cat Prince Meets Golden Retriever Knight,\r\nAerion Targaryen’s Terrible No Good Very Bad Personality', 'Duncan the\r\nTall and Morally Conflicted', 'Beta’d We Live Like Baelor Breakspear (In\r\nThis Fic At Least)', 'Author Apologizes For Making Up Places But\r\nNeeded A Few Lesser Lords To Bully For The Plot', 'POV Alternating,\r\nOther Additional Tags to Be Added', 'Male-Female Friendship', 'Past Relationship(s)', 'Complicated\r\nRelationships', 'Set before Islands', 'After Jelly Beans Have Power,\r\nGuilt', 'Fatherhood\r\nFamily Feels\r\nDysfunctional Family\r\nCharacter Study\r\nAngst\r\nDeveloping Friendships']
 u_good_tags = st.multiselect(
     "Include tags:",
     full_tags,
