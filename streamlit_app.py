@@ -46,7 +46,7 @@ with col1: fandom = st.multiselect(
 with col2: option4 = st.selectbox(
     "How would you like to be contacted?",
     ("Email", "Home phone", "Mobile phone"),
-    )
+)
 
 with col3: tags = st.multiselect(
     "Fandoms",
