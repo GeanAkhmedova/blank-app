@@ -68,7 +68,7 @@ if st.button("Show search results", type="primary"):
         #st.write("poop")
         
     res = df
-    for i in range(5,8):
+    for i in range(4,7):
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns(3, border=True)
         with left:
