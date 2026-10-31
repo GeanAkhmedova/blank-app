@@ -63,12 +63,12 @@ sort_order = st.radio(
 # st.session_state.name
 
 if st.button("Show search results", type="primary"):
-    st.write("Nothing here yet :(") 
-    if word_min == 0:
-        st.write("poop")
+    #st.write("Nothing here yet :(") 
+    #if word_min == 0:
+        #st.write("poop")
         
     res = df
-    for i in range(3):
+    for i in range(5,8):
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns(3, border=True)
         with left:
