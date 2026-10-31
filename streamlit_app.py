@@ -112,7 +112,7 @@ if st.button("Show search results", type="primary"):
     #filtering over included tags
     for word in u_good_tags:
         for i in Set:
-            if contains_substring_ignore_case(res.loc[i,"Tags"], word):
+            if contains_substring_ignore_case(res.loc[i,"Tags"].replace(' ',''), word.replace(' ','')):
                 SetNew.append(i)
         Set = SetNew.copy()
         SetNew = []
@@ -120,7 +120,7 @@ if st.button("Show search results", type="primary"):
     #filtering over excluded tags
     for word in u_good_tags:
         for i in Set:
-            if contains_substring_ignore_case(res.loc[i,"Tags"], word) == False:
+            if contains_substring_ignore_case(res.loc[i,"Tags"].replace(' ',''), word.replace(' ','')) == False:
                 SetNew.append(i)
         Set = SetNew.copy()
         SetNew = []
