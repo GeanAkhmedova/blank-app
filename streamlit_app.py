@@ -38,7 +38,7 @@ u_good_tags = st.multiselect(
     select_all=False,
     )
 u_bad_tags = st.multiselect(
-    "Include tags:",
+    "Exclude tags:",
     full_tags,
     select_all=False,
     )
