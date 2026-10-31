@@ -65,17 +65,28 @@ sort_order = st.radio(
 # You can access the value at any point with:
 # st.session_state.name
 
+def contains_substring_ignore_case(main_string, substring):
+    return substring.lower() in main_string.lower()
+    
 if st.button("Show search results", type="primary"):
     #st.write("Nothing here yet :(") 
     #if word_min == 0:
         #st.write("poop")
     res = df
-    mask = True
-    for word in u_good_tags:
-        res = res[(res['Tags'].str.contains(word, case=False, na=False))]
-    for word in u_bad_tags:
-        res = res[(res['Tags'].str.contains(word, case=False, na=False)) == False]
-    res1 = res
+    Set = []
+    for i in range(r):
+        for word in u_good_tags:
+             if contains_substring_ignore_case(res.loc[i,'Tags'], word):
+              Set.append(i)
+    res1 = res.iloc[Set]
+
+    r = res1.shape[0]
+    Set = []
+    for i in range(r):
+        for word in u_good_tags:
+            if contains_substring_ignore_case(res1.loc[i,'Tags'], word) == False:
+              Set.append(i)
+    res1 = res1.iloc[Set]
     l = res1.shape[0]
     st.write(res1.shape)
     st.text(u_good_tags)
