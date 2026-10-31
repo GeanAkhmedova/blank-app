@@ -93,9 +93,6 @@ if st.button("Show search results", type="primary"):
         Set = SetNew.copy()
         SetNew = []
 
-    if len(u_good_tags) == 0:
-        Set = range(r)
-
     #filtering over excluded tags
     for word in u_good_tags:
         for i in Set:
