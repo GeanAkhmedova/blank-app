@@ -4,6 +4,13 @@ import streamlit as st
 
 st.write("Well, hello there!")
 
+fandom_list = ["F1", "F2", "F3"]
+user_fandoms = st.multiselect(
+    "Pick you fandoms!",
+    fandom_list,
+    select_all=False,
+    )
+
 @st.cache_data
 def load_data():
     df = pd.read_csv("Ao3 test - Sheet1 (1).csv")
