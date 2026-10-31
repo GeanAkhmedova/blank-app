@@ -34,3 +34,24 @@ with col2:
         label_visibility=st.session_state.visibility,
         disabled=st.session_state.disabled,
     )
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1: fandom = st.multiselect(
+    "Fandoms",
+    ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
+    select_all=False,
+)
+
+with col2: option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+    label_visibility=st.session_state.visibility,
+    disabled=st.session_state.disabled,
+)
+
+with col3: tags = st.multiselect(
+    "Fandoms",
+    ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
+    select_all=False,
+)
