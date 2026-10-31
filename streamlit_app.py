@@ -9,16 +9,18 @@ def load_data():
     df = pd.read_csv("ao3 last test.csv")
     return df
 df = load_data()
+
+res = df.copy()
 r = df.shape[0]
 w = df.shape[1]
 for i in range(r):
   for j in range(w):
-    df.iloc[i,j] = str(df.iloc[i,j]).replace(' \r',' ')
-    df.iloc[i,j] = str(df.iloc[i,j]).replace('\r','')
-    df.iloc[i,j] = str(df.iloc[i,j]).replace('\n',' ')
+    res.iloc[i,j] = str(res.iloc[i,j]).replace(' \r',' ')
+    res.iloc[i,j] = str(res.iloc[i,j]).replace('\r','')
+    res.iloc[i,j] = str(res.iloc[i,j]).replace('\n',' ')
     #if df.iloc[i,j] == None:
       #df.iloc[i,j] = '0'
-  df.loc[i,"Word Count"] = str(df.loc[i, "Word Count"]).replace(",","")
+  res.loc[i,"Word Count"] = str(df.res[i, "Word Count"]).replace(",","")
   #df.loc[i, "Word Count"] = int(df.loc[i, "Word Count"])
 
 
@@ -82,7 +84,7 @@ if st.button("Show search results", type="primary"):
     #st.write("Nothing here yet :(") 
     #if word_min == 0:
         #st.write("poop")
-    res = df
+    #res = df
     r = df.shape[0]
 
     #filtering over fandoms
