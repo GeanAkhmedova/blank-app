@@ -94,6 +94,18 @@ if st.button("Show search results", type="primary"):
         Set = SetNew.copy()
         SetNew = []
 
+    #filtering over word count
+
+    for i in Set:
+        if res.loc[i, "Word Count"] >= word_min:
+            if word max == 0:
+                SetNew.append(i)
+            if word max > res.loc[i, "Word Count"]:
+                SetNew.append(i)
+    Set = SetNew.copy()
+    SetNew = []
+            
+
     #filtering over included tags
     for word in u_good_tags:
         for i in Set:
@@ -109,6 +121,8 @@ if st.button("Show search results", type="primary"):
                 SetNew.append(i)
         Set = SetNew.copy()
         SetNew = []
+
+    
 
     
     #res = df
