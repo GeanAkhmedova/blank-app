@@ -18,7 +18,7 @@ for i in range(r):
     #if df.iloc[i,j] == None:
       #df.iloc[i,j] = '0'
   df.loc[i,"Word Count"] = str(df.loc[i, "Word Count"]).replace(",","")
-  df.loc[i, "Word Count"] = int(df.loc[i, "Word Count"])
+  #df.loc[i, "Word Count"] = int(df.loc[i, "Word Count"])
 
 
 st.write("Well, hello there!")
@@ -97,10 +97,10 @@ if st.button("Show search results", type="primary"):
     #filtering over word count
 
     for i in Set:
-        if res.loc[i, "Word Count"] >= word_min:
+        if float(res.loc[i, "Word Count"]) >= word_min:
             if word_max == 0:
                 SetNew.append(i)
-            if word_max > res.loc[i, "Word Count"]:
+            if word_max > float(res.loc[i, "Word Count"]):
                 SetNew.append(i)
     Set = SetNew.copy()
     SetNew = []
