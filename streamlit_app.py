@@ -74,23 +74,39 @@ if st.button("Show search results", type="primary"):
         #st.write("poop")
     res = df
     r = df.shape[0]
-    Set = []
-    for i in range(r):
-        for word in u_good_tags:
-             if contains_substring_ignore_case(res.loc[i,"Tags"], word):
-              Set.append(i)
+
+    #filtering over fandoms
+    Set = range(r)
+    SetNew = []
+    for word in u_fandoms:
+        for i in Set:
+            if contains_substring_ignore_case(res.loc[i,"Fandom"], word):
+                SetNew.append(i)
+        Set = SetNew.copy()
+        SetNew = []
+
+    #filtering over included tags
+    for word in u_good_tags:
+        for i in Set:
+            if contains_substring_ignore_case(res.loc[i,"Tags"], word):
+                SetNew.append(i)
+        Set = SetNew.copy()
+        SetNew = []
 
     if len(u_good_tags) == 0:
         Set = range(r)
-    Set2 = []
-    for i in Set:
-        for word in u_bad_tags:
+
+    #filtering over excluded tags
+    for word in u_good_tags:
+        for i in Set:
             if contains_substring_ignore_case(res.loc[i,"Tags"], word) == False:
-              Set2.append(i)
-    if len(u_bad_tags) == 0:
-        Set2 = Set
+                SetNew.append(i)
+        Set = SetNew.copy()
+        SetNew = []
+
+    
     #res = df
-    for i in Set2:
+    for i in Set:
         #st.write(i)
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
