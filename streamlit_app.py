@@ -70,7 +70,7 @@ if st.button("Show search results", type="primary"):
     res = df
     for i in range(4,7):
         st.subheader(res.loc[i,'Title'])
-        left, middle, right = st.columns(3, border=True)
+        left, middle, right = st.columns([3,3,1], border=True)
         with left:
             #st.write("Rating: ", res.loc[i,"Rating"])
             st.write("Author: ",res.loc[i, "Author"])
