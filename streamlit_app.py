@@ -79,7 +79,7 @@ if st.button("Show search results", type="primary"):
             st.write("Relationships: ", res.loc[i, "Relationships"])    
         #left.markdown("hubba hubba")
         middle.markdown(res.loc[i,"Tags"])
-        right.markdown("link to drive goes here")
+        right.markdown("Link: ", res.loc[i, "Link"])
         st.write("Summarry: ", res.loc[i,"Summary"])
     
 
