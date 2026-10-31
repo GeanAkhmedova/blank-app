@@ -41,14 +41,20 @@ with col1: fandom = st.multiselect(
     "Fandoms",
     ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
     select_all=False,
-)
+    )
 
-with col2: option = st.selectbox(
+with col2: option4 = st.selectbox(
     "How would you like to be contacted?",
     ("Email", "Home phone", "Mobile phone"),
-)
+    )
 
 with col3: tags = st.multiselect(
+    "Fandoms",
+    ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
+    select_all=False,
+)
+
+with col4: tags4 = st.multiselect(
     "Fandoms",
     ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
     select_all=False,
