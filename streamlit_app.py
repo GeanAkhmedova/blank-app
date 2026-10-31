@@ -18,7 +18,7 @@ for i in range(r):
     #if df.iloc[i,j] == None:
       #df.iloc[i,j] = '0'
   df.loc[i,"Word Count"] = str(df.loc[i, "Word Count"]).replace(",","")
-  df.loc[i, "Word Count"] == int(df.loc[i, "Word Count"])
+  df.loc[i, "Word Count"] = int(df.loc[i, "Word Count"])
 
 
 st.write("Well, hello there!")
