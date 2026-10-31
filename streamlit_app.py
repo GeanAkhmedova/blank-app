@@ -1,6 +1,5 @@
 import streamlit as st
 
-st.write("You selected:", option)
 
 st.text_input("Your name", key="name")
 
