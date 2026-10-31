@@ -84,7 +84,7 @@ if st.button("Show search results", type="primary"):
     r = res1.shape[0]
     Set = []
     for i in range(r):
-        for word in u_good_tags:
+        for word in u_bad_tags:
             if contains_substring_ignore_case(res1.loc[i,'Tags'], word) == False:
               Set.append(i)
     res1 = res1.iloc[Set]
