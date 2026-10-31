@@ -118,7 +118,7 @@ if st.button("Show search results", type="primary"):
         SetNew = []
 
     #filtering over excluded tags
-    for word in u_good_tags:
+    for word in u_bad_tags:
         for i in Set:
             if contains_substring_ignore_case(res.loc[i,"Tags"].replace(' ',''), word.replace(' ','')) == False:
                 SetNew.append(i)
