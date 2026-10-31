@@ -13,6 +13,7 @@ r = df.shape[0]
 w = df.shape[1]
 for i in range(r):
   for j in range(w):
+    df.iloc[i,j] = str(df.iloc[i,j]).replace(' \r',' ')
     df.iloc[i,j] = str(df.iloc[i,j]).replace('\r','')
     df.iloc[i,j] = str(df.iloc[i,j]).replace('\n',' ')
     #if df.iloc[i,j] == None:
