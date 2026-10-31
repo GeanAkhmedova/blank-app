@@ -5,9 +5,6 @@ st.text_input("Your name", key="name")
 # You can access the value at any point with:
 st.session_state.name
 
-if "visibility" not in st.session_state:
-    st.session_state.visibility = "visible"
-    st.session_state.disabled = False
 
 clients = st.multiselect(
     "Select clients",
@@ -16,6 +13,10 @@ clients = st.multiselect(
 )
 
 st.write("You selected:", clients)
+
+options = ["North", "East", "South", "West"]
+selection = st.pills("Directions", options, selection_mode="multi")
+st.markdown(f"Your selected options: {selection}.")
 
 col1, col2, col3, col4 = st.columns(4)
 
