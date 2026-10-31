@@ -10,6 +10,15 @@ def load_data():
     return df
 df = load_data()
 r = df.shape[0]
+w = df.shape[1]
+for i in range(r):
+  for j in range(w):
+    df.iloc[i,j] = str(df.iloc[i,j]).replace('\r','')
+    df.iloc[i,j] = str(df.iloc[i,j]).replace('\n','')
+    if df.iloc[i,j] == None:
+      df.iloc[i,j] = '0'
+  df.loc[i,"Word Count"] = str(df.loc[i, "Word Count"]).replace(",","")
+  df.loc[i, "Word Count"] == int(df.loc[i, "Word Count"])
 
 
 st.write("Well, hello there!")
