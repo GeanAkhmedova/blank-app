@@ -73,6 +73,7 @@ if st.button("Show search results", type="primary"):
     #if word_min == 0:
         #st.write("poop")
     res = df
+    r = df.shape[0]
     Set = []
     for i in range(r):
         for word in u_good_tags:
@@ -91,7 +92,7 @@ if st.button("Show search results", type="primary"):
     st.write(res1.shape)
     st.text(u_good_tags)
     #res = df
-    for i in range(min(8,l-1)):
+    for i in range(min(8,l)):
         #st.write(i)
         st.subheader(res1.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
