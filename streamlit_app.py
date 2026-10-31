@@ -12,7 +12,7 @@ r = df.shape[0]
 
 st.write("Well, hello there!")
 
-#fandom_list = ['C', 'B', 'A', 'Twilight Series - Stephenie Meyer', 'A Knight of the Seven Kingdoms (TV)', 'Adventure Time']
+fandom_list = ['C', 'B', 'A', 'Twilight Series - Stephenie Meyer', 'A Knight of the Seven Kingdoms (TV)', 'Adventure Time']
 u_fandoms = st.multiselect(
     "Pick you fandoms!",
     fandom_list,
