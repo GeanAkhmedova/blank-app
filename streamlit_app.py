@@ -1,6 +1,12 @@
 import altair as alt
+import datetime
 import pandas as pd
 import streamlit as st
+@st.cache_data
+def load_data():
+    df = pd.read_csv("Ao3 test - Sheet1 (1).csv")
+    return df
+df = load_data()
 
 st.write("Well, hello there!")
 
@@ -13,9 +19,9 @@ user_fandoms = st.multiselect(
 
 options = ["Gen", "Teen", "Mature", "Explicit", "Unrated"]
 selection = st.pills("Rating", options, selection_mode="multi")
-st.markdown(f"Your selected options: {selection}.")
+#st.markdown(f"Your selected options: {selection}.")
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1: 
     word_min = st.number_input(
     "Words min:", value=0
@@ -26,11 +32,14 @@ with col2:
 )
 
 
-@st.cache_data
-def load_data():
-    df = pd.read_csv("Ao3 test - Sheet1 (1).csv")
-    return df
-df = load_data()
+
+col1, col2 = st.columns(2)
+with col1: 
+    d = st.date_input("When's your birthday", datetime.date(2019, 7, 6))
+    st.write("Your birthday is:", d)
+with col2: 
+    'eeee'
+
 st.write(df)
 st.text_input("Your name", key="name")
 
