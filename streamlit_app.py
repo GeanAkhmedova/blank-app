@@ -11,7 +11,7 @@ def string_to_csv_cell(value):
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Ao3 test - Sheet1 (4).csv")
+    df = pd.read_csv("Ao3.csv")
     return df
 df = load_data()
 r = df.shape[0]
