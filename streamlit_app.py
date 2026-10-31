@@ -34,12 +34,13 @@ with col2:
 
 with col3: 
     tags = st.multiselect(
-        "Fandoms",
+        "Fandoms1",
         ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
         select_all=False,
     )
 
-with col4: tags4 = st.multiselect(
+with col4: 
+    tags4 = st.multiselect(
         "Fandoms",
         ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
         select_all=False,
