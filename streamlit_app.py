@@ -74,25 +74,25 @@ if st.button("Show search results", type="primary"):
         mask &= res['Tags'].str.contains(word, case=False, na=False)  
     for word in u_bad_tags:
         mask &= ~res['Tags'].str.contains(word, case=False, na=False) 
-    res = res[mask]
-    l = res.shape[0]
-    st.write(res.shape)
+    res1 = res[mask]
+    l = res1.shape[0]
+    st.write(res1.shape)
     st.text(u_good_tags)
     #res = df
     for i in range(min(8,l-1)):
         #st.write(i)
-        st.subheader(res.loc[i,'Title'])
+        st.subheader(res1.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
         with left:
-            #st.write("Rating: ", res.loc[i,"Rating"])
-            st.write("Author: ",res.loc[i, "Author"])
-            st.write("Fandom:", res.loc[i, "Fandom"])
-            st.write("Words: ", res.loc[i, "Word Count"])
+            #st.write("Rating: ", res1.loc[i,"Rating"])
+            st.write("Author: ",res1.loc[i, "Author"])
+            st.write("Fandom:", res1.loc[i, "Fandom"])
+            st.write("Words: ", res1.loc[i, "Word Count"])
             st.write("Relationships: ", res.loc[i, "Relationships"])    
         #left.markdown("hubba hubba")
-        middle.markdown(res.loc[i,"Tags"])
-        right.markdown(res.loc[i, "Link"])
-        st.write("Summarry: ", res.loc[i,"Summary"])
+        middle.markdown(res1.loc[i,"Tags"])
+        right.markdown(res1.loc[i, "Link"])
+        st.write("Summarry: ", res1.loc[i,"Summary"])
         
 
 
