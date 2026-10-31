@@ -72,10 +72,10 @@ if st.button("Show search results", type="primary"):
     res = df
     mask = True
     for word in u_good_tags:
-        mask &= res['Tags'].str.contains(word, case=False, na=False)  
+        res = res[(res['Tags'].str.contains(word, case=False, na=False))]
     for word in u_bad_tags:
-        mask &= ~res['Tags'].str.contains(word, case=False, na=False) 
-    res1 = res[mask]
+        res = res[(res['Tags'].str.contains(word, case=False, na=False)) == False]
+    res1 = res
     l = res1.shape[0]
     st.write(res1.shape)
     st.text(u_good_tags)
