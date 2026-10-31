@@ -79,7 +79,7 @@ if st.button("Show search results", type="primary"):
     #st.write(res.shape)
     st.text(u_good_tags)
     #res = df
-    for i in range(min(3,l-1)):
+    for i in range(min(7,l-1)):
         #st.write(i)
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
