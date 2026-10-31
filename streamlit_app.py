@@ -74,10 +74,10 @@ if st.button("Show search results", type="primary"):
         mask &= ~res['Tags'].str.contains(word, case=False, na=False) 
     res = res[mask]
     l = res.shape[0]
-    st.write(res.shape)
+    #st.write(res.shape)
     #res = df
     for i in range(min(5,l-1)):
-        st.write(i)
+        #st.write(i)
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
         with left:
