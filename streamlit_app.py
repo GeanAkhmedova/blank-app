@@ -67,7 +67,7 @@ if st.button("Show search results", type="primary"):
         
     res = df
     for i in range(3):
-        st.write(res.loc[i,'Title'])
+        st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns(3, border=True)
         with left:
             #st.write("Rating: ", res.loc[i,"Rating"])
@@ -77,7 +77,8 @@ if st.button("Show search results", type="primary"):
             st.write("Relationships: ", res.loc[i, "Relationships"])    
         #left.markdown("hubba hubba")
         middle.markdown(res.loc[i,"Tags"])
-        right.markdown(res.loc[i,"Summary"])
+        right.markdown("link to drive goes here")
+        st.write("Summarry: ", res.loc[i,"Summary"])
     
 
 
