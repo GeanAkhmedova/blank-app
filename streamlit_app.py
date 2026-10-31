@@ -73,7 +73,7 @@ if st.button("Show search results", type="primary"):
             #st.write("Rating: ", res.loc[i,"Rating"])
             st.write("Author: ",res.loc[i, "Author"])
             st.write("Fandom:", res.loc[i, "Fandom"])
-            st.write("Words: ", res.loc[i, "Words"])
+            st.write("Words: ", res.loc[i, "Word Count"])
             st.write("Relationships: ", res.loc[i, "Relationships"])    
         #left.markdown("hubba hubba")
         middle.markdown(res.loc[i,"Tags"])
