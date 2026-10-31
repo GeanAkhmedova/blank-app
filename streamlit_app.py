@@ -6,7 +6,7 @@ import streamlit as st
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("ao3 last test.csv")
+    df = pd.read_csv("Ao3 test - Sheet1 (6).csv")
     return df
 df = load_data()
 
