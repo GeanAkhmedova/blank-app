@@ -4,13 +4,32 @@ import pandas as pd
 import streamlit as st
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Ao3 test - Sheet1 (2).csv")
+    df = pd.read_csv("Ao3 test.csv")
     return df
 df = load_data()
+r = df.shape[0]
+full_tags = []
+fandom_list = []
+for i in range(r):
+    unsep1 = df.loc[i,"Tags"]
+    unsep2 = df.loc[i,"Fandom"]
+    fic_tags = unsep.split(', ')
+    l1 = len(fic_tags)
+    fic_fandoms = unsep2.split(', ')
+    l2 = len(fic_fandoms)
+    for j in range(l1):
+        tag = fic_tags[j]
+        if tag not in full_tags:
+            full_tags.append(tag)
+    for j in range(l2):
+        tag = fic_fandoms[j]
+        if tag not in fandom_list:
+            fandom_list.append(tag)
+
 
 st.write("Well, hello there!")
 
-fandom_list = ["F1", "F2", "F3"]
+#fandom_list = ["F1", "F2", "F3"]
 u_fandoms = st.multiselect(
     "Pick you fandoms!",
     fandom_list,
@@ -31,7 +50,7 @@ with col2:
     "Words max:", value=0
 )
 
-full_tags = ["T1", "T2", "T3", "T4"]
+#full_tags = ["T1", "T2", "T3", "T4"]
 u_good_tags = st.multiselect(
     "Include tags:",
     full_tags,
