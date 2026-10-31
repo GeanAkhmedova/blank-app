@@ -12,6 +12,10 @@ st.text_input("Your name", key="name")
 # You can access the value at any point with:
 st.session_state.name
 
+if "visibility" not in st.session_state:
+    st.session_state.visibility = "visible"
+    st.session_state.disabled = False
+
 clients = st.multiselect(
     "Select clients",
     ["Acme", "Globex", "Initech", "Umbrella", "Wayne"],
