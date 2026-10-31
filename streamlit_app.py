@@ -20,7 +20,7 @@ for i in range(r):
     res.iloc[i,j] = str(res.iloc[i,j]).replace('\n',' ')
     #if df.iloc[i,j] == None:
       #df.iloc[i,j] = '0'
-  res.loc[i,"Word Count"] = str(df.res[i, "Word Count"]).replace(",","")
+  res.loc[i,"Word Count"] = str(res.loc[i, "Word Count"]).replace(",","")
   #df.loc[i, "Word Count"] = int(df.loc[i, "Word Count"])
 
 
