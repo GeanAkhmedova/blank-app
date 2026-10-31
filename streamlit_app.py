@@ -66,9 +66,15 @@ if st.button("Show search results", type="primary"):
     #st.write("Nothing here yet :(") 
     #if word_min == 0:
         #st.write("poop")
-        
     res = df
-    for i in range(4,7):
+    mask = True
+    for word in u_good_tags:
+        mask &= res['Tags'].str.contains(word, case=False, na=False)  
+    for word in u_bad_tags:
+        mask &= ~res['Tags'].str.contains(word, case=False, na=False) 
+    res = res[mask]
+    #res = df
+    for i in range(5):
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
         with left:
