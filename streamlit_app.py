@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Ao3 test - Sheet1 (1).csv")
+    df = pd.read_csv("Ao3 test - Sheet1 (2).csv")
     return df
 df = load_data()
 
@@ -64,5 +64,14 @@ if st.button("Show search results", type="primary"):
     st.write("Nothing here yet :(") 
     if word_min == 0:
         st.write("poop")
+        
+    res = df
+    for i in range(3):
+        st.write(res.loc[i,'Title'])
+        left, middle, right = st.columns(3, border=True)
+        left.markdown("Lorem ipsum " * 10)
+        middle.markdown("Lorem ipsum " * 5)
+        right.markdown("Lorem ipsum ")
+    
 
 
