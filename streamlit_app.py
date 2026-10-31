@@ -1,6 +1,8 @@
 import streamlit as st
 
-st.title("Testing file search")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
 )
+
+st.write("You selected:", option)
