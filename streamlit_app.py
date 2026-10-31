@@ -6,6 +6,7 @@ st.write("Well, hello there!")
 def load_data():
     df = pd.read_csv("Ao3 test - Sheet1 (1).csv")
     return df
+df = load_data()
 st.write(df)
 st.text_input("Your name", key="name")
 
