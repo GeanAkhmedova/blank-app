@@ -79,13 +79,16 @@ if st.button("Show search results", type="primary"):
         for word in u_good_tags:
              if contains_substring_ignore_case(res.loc[i,"Tags"], word):
               Set.append(i)
-    st.write(Set)
+
+    if len(u_good_tags) == 0:
+        Set = range(r)
     Set2 = []
     for i in Set:
         for word in u_bad_tags:
             if contains_substring_ignore_case(res.loc[i,"Tags"], word) == False:
               Set2.append(i)
-    st.text(u_good_tags)
+    if len(u_bad_tags) == 0:
+        Set2 = Set
     #res = df
     for i in Set2:
         #st.write(i)
