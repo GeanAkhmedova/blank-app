@@ -98,9 +98,9 @@ if st.button("Show search results", type="primary"):
 
     for i in Set:
         if res.loc[i, "Word Count"] >= word_min:
-            if word max == 0:
+            if word_max == 0:
                 SetNew.append(i)
-            if word max > res.loc[i, "Word Count"]:
+            if word_max > res.loc[i, "Word Count"]:
                 SetNew.append(i)
     Set = SetNew.copy()
     SetNew = []
