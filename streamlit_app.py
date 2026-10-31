@@ -3,12 +3,6 @@ import datetime
 import pandas as pd
 import streamlit as st
 
-def string_to_csv_cell(value):
-    escaped_value = value.replace('"', '""')
-    if (',' in value or '\n' in value or '\r' in value):
-        return '"' + escaped_value + '"'
-    return value
-
 @st.cache_data
 def load_data():
     df = pd.read_csv("Ao3.csv")
@@ -83,8 +77,9 @@ if st.button("Show search results", type="primary"):
     res = res[mask]
     l = res.shape[0]
     #st.write(res.shape)
+    st.text(u_good_tags)
     #res = df
-    for i in range(min(5,l-1)):
+    for i in range(min(3,l-1)):
         #st.write(i)
         st.subheader(res.loc[i,'Title'])
         left, middle, right = st.columns([3,3,1], border=True)
