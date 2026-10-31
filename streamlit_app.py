@@ -76,7 +76,7 @@ if st.button("Show search results", type="primary"):
         mask &= ~res['Tags'].str.contains(word, case=False, na=False) 
     res = res[mask]
     l = res.shape[0]
-    #st.write(res.shape)
+    st.write(res.shape)
     st.text(u_good_tags)
     #res = df
     for i in range(min(8,l-1)):
