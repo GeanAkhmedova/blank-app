@@ -14,7 +14,7 @@ w = df.shape[1]
 for i in range(r):
   for j in range(w):
     df.iloc[i,j] = str(df.iloc[i,j]).replace('\r','')
-    df.iloc[i,j] = str(df.iloc[i,j]).replace('\n','')
+    df.iloc[i,j] = str(df.iloc[i,j]).replace('\n',' ')
     #if df.iloc[i,j] == None:
       #df.iloc[i,j] = '0'
   df.loc[i,"Word Count"] = str(df.loc[i, "Word Count"]).replace(",","")
