@@ -69,9 +69,9 @@ if st.button("Show search results", type="primary"):
     for i in range(3):
         st.write(res.loc[i,'Title'])
         left, middle, right = st.columns(3, border=True)
-        left.markdown("Lorem ipsum " * 10)
-        middle.markdown("Lorem ipsum " * 5)
-        right.markdown("Lorem ipsum ")
+        left.markdown("hubba hubba")
+        middle.markdown(res.loc[i,"Tags"])
+        right.markdown(res.loc[i,"Summary"])
     
 
 
