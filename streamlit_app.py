@@ -49,7 +49,12 @@ with col1:
 with col2: 
     before = st.date_input("Published before", datetime.date(2026, 10, 30))
 
-st.write(df)
+sort_order = st.radio(
+    "Sort by",
+    ["Word count (longest first)", "Word count (shortest first)", "Date published (newest first)", "Date published (oldest first)"],
+)
+
+# st.write(df)
 #st.text_input("Your name", key="name")
 
 # You can access the value at any point with:
