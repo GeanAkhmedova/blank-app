@@ -10,6 +10,15 @@ user_fandoms = st.multiselect(
     fandom_list,
     select_all=False,
     )
+col1, col2, col3 = st.columns(3)
+with col1: 
+    options = ["Gen", "Teen", "Mature", "Explicit", "Unrated"]
+    selection = st.pills("Rating", options, selection_mode="multi")
+    st.markdown(f"Your selected options: {selection}.")
+with col2: 
+    eeee
+with col3: 
+    33333
 
 @st.cache_data
 def load_data():
@@ -31,9 +40,7 @@ clients = st.multiselect(
 
 st.write("You selected:", clients)
 
-options = ["Gen", "Teen", "Mature", "Explicit", "Unrated"]
-selection = st.pills("Rating", options, selection_mode="multi")
-st.markdown(f"Your selected options: {selection}.")
+
 
 col1, col2, col3, col4 = st.columns(4)
 
