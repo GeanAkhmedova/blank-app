@@ -13,7 +13,7 @@ fandom_list = []
 for i in range(r):
     unsep1 = df.loc[i,"Tags"]
     unsep2 = df.loc[i,"Fandom"]
-    fic_tags = unsep.split(', ')
+    fic_tags = unsep1.split(', ')
     l1 = len(fic_tags)
     fic_fandoms = unsep2.split(', ')
     l2 = len(fic_fandoms)
