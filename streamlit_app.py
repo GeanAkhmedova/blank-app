@@ -4,7 +4,7 @@ st.write("Well, hello there!")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/movies_genres_summary.csv")
+    df = pd.read_csv("Ao3 test - Sheet1 (1).csv")
     return df
 
 st.text_input("Your name", key="name")
