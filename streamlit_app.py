@@ -73,7 +73,7 @@ if st.button("Show search results", type="primary"):
     for word in u_bad_tags:
         mask &= ~res['Tags'].str.contains(word, case=False, na=False) 
     res = res[mask]
-    l = re.shape[0]
+    l = res.shape[0]
     #res = df
     for i in range(min(5,l)):
         st.subheader(res.loc[i,'Title'])
