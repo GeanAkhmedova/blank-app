@@ -2,6 +2,11 @@ import streamlit as st
 
 st.write("Well, hello there!")
 
+@st.cache_data
+def load_data():
+    df = pd.read_csv("data/movies_genres_summary.csv")
+    return df
+
 st.text_input("Your name", key="name")
 
 # You can access the value at any point with:
