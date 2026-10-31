@@ -66,6 +66,5 @@ if st.button("Show search results", type="primary"):
         with st.echo():
             st.write("This code will be printed to the sidebar.")
 
-        with st.spinner("Loading..."):
-        st.success("Done!")
+        st.write("pppp")
 
