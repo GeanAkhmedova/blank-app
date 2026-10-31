@@ -46,7 +46,6 @@ u_bad_tags = st.multiselect(
 col1, col2 = st.columns(2)
 with col1: 
     after = st.date_input("Published after", datetime.date(2026, 10, 30))
-    st.write("Your birthday is:", d)
 with col2: 
     before = st.date_input("Published before", datetime.date(2026, 10, 30))
 
